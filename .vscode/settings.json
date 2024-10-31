@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "ESERCIZIOC.C": "cpp"
+        "ESERCIZIOC.C": "cpp",
+        "ESERCIZIOD.C": "cpp"
     }
 }
