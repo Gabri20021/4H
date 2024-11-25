@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define N 2
+struct Indirizzo{
+    int numcivico;
+    char nomevia[50];
+    char provincia[2];
+}typedef indirizzo;
+
+struct dataNascita{
+    int giorno;
+    int mese;
+    int anno;
+}typedef data;
+
+struct persona{
+    char nome [50]
+    char cognome[50]
+    indirizzo Indirizzo;
+    data dataNascita;
+}typedef persona;
+
+void carica (persona tab[])
+void stampa(persona tab[])
+
+int main()
+{
+    int char x[50]
+    persona tab[N];
+    carica (tab);
+    stampa (tab);
+
+    return 0;
+}
+void carica (persona[tab]){
+    for(int i=0;i<N;i++){
+        printf("inserisci il tuo nome");:
+        scanf("%s",tab[i].nome)
+
+        
+    }
+}
