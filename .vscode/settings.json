@@ -2,6 +2,7 @@
     "files.associations": {
         "ESERCIZIOC.C": "cpp",
         "ESERCIZIOD.C": "cpp",
-        "JAVA.C": "cpp"
+        "JAVA.C": "cpp",
+        "unistd.h": "c"
     }
 }
