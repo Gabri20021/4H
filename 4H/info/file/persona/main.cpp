@@ -4,7 +4,7 @@
 using namespace std;
 
 int main() {
-    Persona persona1("Shamal", "Welikadage", 17);
+    Persona persona1("Gabriele", "Olaj", 17);
 
     persona1.Saluta();
     persona1.Stampavoti();
