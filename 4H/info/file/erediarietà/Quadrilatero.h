@@ -9,7 +9,7 @@ class Quadrilatero {
 
     public:
 
-    Quadrilatero(int l1,int l2,int l3,int l4);
+    Quadrilatero(int l1,int l2,int l3=7,int l4=12);
     int Perimetro();
     int Area();
     void stampa();

@@ -6,9 +6,9 @@ using namespace std;
 
 int main() {
     
-    Quadrilatero E1(9,3,6,5);
+    Quadrilatero E1(9,3);
     Rettangolo R1(5,7);
-
+    
     cout << "[VALORI DEL QUADRILATERO]" << endl;
     cout << "-------------------------------------" << endl;
     E1.stampa();

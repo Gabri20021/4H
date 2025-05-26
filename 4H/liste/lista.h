@@ -1,21 +1,25 @@
 #ifndef LISTA_H
 #define LISTA_H
 
-struct Nodo { 
+struct Nodo {
     int info;
-    Nodo *next;
+    Nodo* next;
 };
 
-class lista{
+class Lista 
+{
     private:
-    Nodo *p;
+    Nodo* testa;
 
     public:
-    lista();
-
-    void inserimentoinTesta(int valore);
-    void inserimentoincoda(int valore);
-    void cancella(int valore);
-
+    Lista();
+    void inserisciInTesta(int valore);
+    int inserisciInCoda(int valore);
+    int eliminazione(int valore);
+    void cerca(int valore);
+    void stampa();
+    int contaNodi();
+    void rimuoviDuplicati();
 };
+
 #endif

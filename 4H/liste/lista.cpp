@@ -1,54 +1,137 @@
-#include "lista.h"
+#include "Lista.h"
 #include <iostream>
+using namespace std;
 
- using namespace std;
-
-lista::lista() {
-    p = nullptr;
+Lista::Lista() 
+{
+    testa = nullptr;
 }
 
-void lista::inserimentoinTesta(int valore){
-    Nodo* nuovonodo = new Nodo;
-    nuovonodo->info = valore;
-    nuovonodo->next = p;
-    p = nuovonodo; 
-
+void Lista::inserisciInTesta(int valore) 
+{
+    Nodo* nuovoNodo = new Nodo;
+    nuovoNodo->info = valore;
+    nuovoNodo->next = testa; 
+    testa = nuovoNodo; 
 }
 
-void lista::inserimentoincoda(int valore) {
-    Nodo* nuovonodo = new Nodo;
-    nuovonodo->info = valore;
-    nuovonodo->next = nullptr;
-    if(p==nullptr)
-    {
-        p = nuovonodo;
-        return;
-    }
-    Nodo *l = p;
-    while(l->next != nullptr)
-    {
-        l = l->next;
-    }
-    l->next= nuovonodo;
-}
+int Lista::inserisciInCoda(int valore) 
+{
+    Nodo* nuovoNodo = new Nodo;
+    nuovoNodo->info = valore;
+    nuovoNodo->next = nullptr; 
 
-void lista::cancella(int valore) {
-    if (p == nullptr)
+    if (testa == nullptr) 
     {
-        cout<<"vuoto"<< "\n" ;
+        testa = nuovoNodo;
+        return 0;
     }
-    if(p->info==valore)
+    
+    Nodo* p = testa;
+    while (p->next != nullptr) 
     {
-        Nodo *nododaEliminare = p;
         p = p->next;
-        delete nododaEliminare;
     }
-    Nodo *l = p;
-    while(l->next != nullptr || p->info != valore)
+    p->next = nuovoNodo; // Colleghiamo il nuovo nodo alla fine
+    return 0;
+}
+
+int Lista::eliminazione(int valore) 
+{
+    if (testa == nullptr) 
     {
-        l = l->next;      
+        return -1;
     }
-    Nodo *s= l->next;
-    l->next=s->next;
-    delete s;
+
+    if(testa->info == valore) 
+    {
+        Nodo* p = testa;
+        testa = testa->next; 
+        delete p; 
+        return  0;
+    }
+
+    
+    Nodo* p = testa;
+    while (p->next != nullptr && p->next->info != valore) 
+    {
+        p = p->next;
+    }
+
+    if (p->next == nullptr)
+    {
+        return -1;
+    }
+
+    Nodo* nodoDaEliminare = p->next;
+    p->next = nodoDaEliminare->next; // Saltiamo il nodo eliminato
+    delete nodoDaEliminare;
+    return 0;
+}
+
+void Lista::cerca(int valore) 
+{   
+    Nodo* p = testa;
+    while (p != nullptr) 
+    {
+        if(p->info == valore) 
+        {
+            cout << "Elemento trovato nella lista." << "\n";
+        } 
+        else 
+        {
+            cout << "Elemento non trovato." << "\n";
+        }
+        p = p->next; 
+    }
+}
+
+void Lista::stampa() 
+{
+    Nodo* p = testa;
+    while (p != nullptr) 
+    {
+        cout << p->info << "\n";
+        p = p->next;
+    }
+}
+
+int Lista::contaNodi() 
+{
+    Nodo* p = testa;
+    int cont = 0;
+
+    while (p != nullptr) 
+    {
+        cont++; 
+        p = p->next; 
+    }
+
+    return cont;
+}
+
+void Lista::rimuoviDuplicati() 
+{
+    Nodo* corrente = testa;
+
+    while (corrente != nullptr) 
+    {
+        Nodo* p = corrente;
+        while (p->next != nullptr) 
+        {
+            if (p->next->info == corrente->info) 
+            {
+                
+                Nodo* nodoDaEliminare = p->next;
+                p->next = nodoDaEliminare->next;
+                delete nodoDaEliminare;
+            } 
+            else 
+            {
+                p = p->next; 
+            }
+            
+        }
+        corrente = corrente->next;
+    }
 }
