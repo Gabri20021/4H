@@ -1,4 +1,5 @@
-#include "Lista.h"
+/*GABRIELE OLAJ          4H*/
+#include "lista.h"
 #include <iostream>
 using namespace std;
 
@@ -10,7 +11,7 @@ int main() {
     lista.inserisciInTesta(3);
 
     int a= lista.inserisciInCoda(4);
-    int b= lista.inserisciInCoda(5);
+    lista.inserisciInCoda(5);
 
     lista.stampa();
     cout << "\n";

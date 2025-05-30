@@ -40,4 +40,3 @@ using namespace std;
         cout<<"Il valore dell'area e' "<<Area()<<endl;
     }
 
-
